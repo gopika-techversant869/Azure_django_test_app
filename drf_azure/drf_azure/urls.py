@@ -22,9 +22,7 @@ Including another URLconf
     
 # ]
 from django.urls import path, include
-from core.views import ProfileView
+# from core.views import ProfileView
 
-urlpatterns = [
-    path('auth/', include('django_auth_adfs.urls')),
-    path('api/profile/', ProfileView.as_view()),
-]
+pip install psycopg2-binary
+
