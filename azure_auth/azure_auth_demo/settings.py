@@ -142,3 +142,12 @@ AZURE_TENANT_ID = os.getenv("AZURE_TENANT_ID")
 AZURE_AUTHORITY = os.getenv("AZURE_AUTHORITY")
 AZURE_REDIRECT_URI = os.getenv("AZURE_REDIRECT_URI")
 AZURE_SCOPE = os.getenv("AZURE_SCOPE").split(",")
+
+AUTH_URL = f"https://login.microsoftonline.com/{AZURE_TENANT_ID}/oauth2/v2.0/authorize"
+TOKEN_URL = f"https://login.microsoftonline.com/{AZURE_TENANT_ID}/oauth2/v2.0/token"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'authapp.authentication.AzureADAuthentication',
+    ),
+}
